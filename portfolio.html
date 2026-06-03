@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Portfolio — PixelForge</title>
+  <meta name="description" content="Recent PixelForge website launches for restaurants, law offices, e-commerce stores, and local businesses across the Mississippi Gulf Coast." />
+  <meta name="theme-color" content="#0A0E1A" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Reading progress -->
+  <div class="reading-bar" aria-hidden="true"><div class="reading-bar__fill"></div></div>
+
+  <!-- === HEADER === -->
+  <header class="site-header">
+    <div class="container-x site-header__inner">
+      <a href="index.html" aria-label="PixelForge home" style="display:flex; align-items:center;">
+        <img src="assets/logo/logo.svg" alt="PixelForge" style="height:34px; width:auto;" />
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="portfolio.html" class="nav-link active">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <a href="contact.html" class="btn btn-primary btn-sm hidden md:inline-flex" data-magnetic>Start a Project</a>
+        <button class="nav-burger" data-nav-burger aria-label="Open navigation" aria-expanded="false" aria-controls="nav-drawer">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-overlay" aria-hidden="true"></div>
+  <aside class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+    <div class="nav-drawer__head">
+      <img src="assets/logo/logo.svg" alt="PixelForge" style="height:28px;" />
+      <button class="nav-burger" data-nav-close aria-label="Close navigation">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"/></svg>
+      </button>
+    </div>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="pricing.html" class="nav-link">Pricing</a>
+    <a href="portfolio.html" class="nav-link active">Portfolio</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="contact.html" class="btn btn-primary" data-magnetic style="margin-top:1rem;">Start a Project</a>
+  </aside>
+  <!-- === /HEADER === -->
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero grain">
+      <div class="container-x">
+        <span class="pilcrow">
+          <span class="pilcrow__num">¶ 01</span>
+          <span class="pilcrow__rule"></span>
+          <span>Selected work</span>
+        </span>
+        <h1 class="editorial-title" style="margin-bottom:1.25rem;">
+          Real businesses. <em>Real</em> sites.
+        </h1>
+        <p class="page-hero__lede">A selection of recent launches from across the Gulf Coast. Click any project for the build details, tech stack, and what we shipped.</p>
+      </div>
+    </section>
+
+    <!-- FILTER + GRID -->
+    <section class="section" style="padding-top:0;">
+      <div class="container-x">
+        <div class="chip-row reveal" role="group" aria-label="Filter portfolio">
+          <button class="chip active" data-filter="all">All Work</button>
+          <button class="chip" data-filter="web">Web Design</button>
+          <button class="chip" data-filter="ecom">E-commerce</button>
+          <button class="chip" data-filter="local">Local Business</button>
+        </div>
+
+        <div class="grid-2">
+          <a href="#" class="work-tile reveal" data-spotlight data-delay="0ms"
+             data-tags="web local"
+             data-project
+             data-img="assets/images/project-seafood.svg"
+             data-title="Bayou Catch Seafood"
+             data-tag-list="Restaurant|HTML + Tailwind|Online Ordering"
+             data-body="A coastal seafood restaurant in Biloxi that needed to handle a flood of summer reservations. We rebuilt their site around their menu and a frictionless online booking flow. Average page load: 1.4 seconds. Online reservations went from a trickle to over 60% of weekday bookings within the first month after launch.">
+            <img src="assets/images/project-seafood.svg" alt="Bayou Catch website" class="work-tile__img" loading="lazy" />
+            <div class="work-tile__overlay">
+              <span class="work-tile__tag">Restaurant · HTML + Tailwind</span>
+              <span class="work-tile__title">Bayou Catch Seafood</span>
+              <span class="work-tile__cta">View details →</span>
+            </div>
+          </a>
+
+          <a href="#" class="work-tile reveal" data-spotlight data-delay="80ms"
+             data-tags="web local"
+             data-project
+             data-img="assets/images/project-law.svg"
+             data-title="Beauregard &amp; Co."
+             data-tag-list="Law Office|Editorial Design|SEO"
+             data-body="A trial attorney firm with 30 years of history but a website stuck in 2014. We rebuilt it with an editorial design that signals authority, added structured data for every practice area, and rewired the consultation booking flow. Organic search traffic doubled in the first quarter after relaunch.">
+            <img src="assets/images/project-law.svg" alt="Beauregard &amp; Co. website" class="work-tile__img" loading="lazy" />
+            <div class="work-tile__overlay">
+              <span class="work-tile__tag">Law Office · Editorial</span>
+              <span class="work-tile__title">Beauregard &amp; Co.</span>
+              <span class="work-tile__cta">View details →</span>
+            </div>
+          </a>
+
+          <a href="#" class="work-tile reveal" data-spotlight data-delay="160ms"
+             data-tags="ecom"
+             data-project
+             data-img="assets/images/project-boutique.svg"
+             data-title="Magnolia &amp; Oak"
+             data-tag-list="Boutique|Shopify|Custom Theme"
+             data-body="A women's clothing boutique launching their first online store. We built a custom Shopify theme that matched their in-store branding and integrated their existing POS inventory. The shop went live two weeks before the holiday season and broke even on the build cost in 18 days.">
+            <img src="assets/images/project-boutique.svg" alt="Magnolia &amp; Oak boutique website" class="work-tile__img" loading="lazy" />
+            <div class="work-tile__overlay">
+              <span class="work-tile__tag">Boutique · Shopify</span>
+              <span class="work-tile__title">Magnolia &amp; Oak</span>
+              <span class="work-tile__cta">View details →</span>
+            </div>
+          </a>
+
+          <a href="#" class="work-tile reveal" data-spotlight data-delay="240ms"
+             data-tags="local"
+             data-project
+             data-img="assets/images/project-contractor.svg"
+             data-title="Delta Build Co."
+             data-tag-list="Contractor|HTML + Tailwind|Lead Form"
+             data-body="A Gulfport-based construction company doing custom homes and storm restoration. They wanted a site that looked as serious as their work and converted phone leads into qualified jobs. We built a brutalist, no-nonsense design with photo-driven project galleries and a multi-step quote form that pre-screens budget and timeline.">
+            <img src="assets/images/project-contractor.svg" alt="Delta Build Co. website" class="work-tile__img" loading="lazy" />
+            <div class="work-tile__overlay">
+              <span class="work-tile__tag">Contractor · HTML + Tailwind</span>
+              <span class="work-tile__title">Delta Build Co.</span>
+              <span class="work-tile__cta">View details →</span>
+            </div>
+          </a>
+
+          <a href="#" class="work-tile reveal" data-spotlight data-delay="320ms"
+             data-tags="web local"
+             data-project
+             data-img="assets/images/project-clinic.svg"
+             data-title="Bayside Family Clinic"
+             data-tag-list="Healthcare|Custom CMS|Booking"
+             data-body="A family practice in Gulfport with three locations and a booking system held together with duct tape. We built a custom-CMS site so the office manager can edit doctor bios and hours without calling us, and integrated their patient portal directly into the appointment flow. Front-desk phone volume dropped roughly 40%.">
+            <img src="assets/images/project-clinic.svg" alt="Bayside Family Clinic website" class="work-tile__img" loading="lazy" />
+            <div class="work-tile__overlay">
+              <span class="work-tile__tag">Healthcare · Custom CMS</span>
+              <span class="work-tile__title">Bayside Family Clinic</span>
+              <span class="work-tile__cta">View details →</span>
+            </div>
+          </a>
+
+          <a href="#" class="work-tile reveal" data-spotlight data-delay="400ms"
+             data-tags="local"
+             data-project
+             data-img="assets/images/project-cpa.svg"
+             data-title="Thibodeaux CPA, P.A."
+             data-tag-list="Professional Services|HTML + Tailwind|SEO"
+             data-body="A solo CPA in Ocean Springs who'd been getting all her work from word of mouth and wanted to start ranking for local tax-prep searches. We built a focused four-page site with serious local SEO (schema, GBP integration, neighborhood landing pages). She started getting form submissions from search within the first month.">
+            <img src="assets/images/project-cpa.svg" alt="Thibodeaux CPA website" class="work-tile__img" loading="lazy" />
+            <div class="work-tile__overlay">
+              <span class="work-tile__tag">Professional Services · SEO</span>
+              <span class="work-tile__title">Thibodeaux CPA, P.A.</span>
+              <span class="work-tile__cta">View details →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGOS STRIP — sand section -->
+    <section class="section--sand grain" style="padding:clamp(4rem, 7vw, 6rem) 0;">
+      <div class="container-x">
+        <div class="reveal" style="text-align:center; max-width:40rem; margin:0 auto 2.5rem;">
+          <span class="pilcrow" style="justify-content:center;">
+            <span class="pilcrow__num">¶ 02</span>
+            <span class="pilcrow__rule"></span>
+            <span>Trusted by</span>
+          </span>
+          <h2 class="editorial-title" style="margin:0 auto; font-size:clamp(2rem, 4vw, 3rem);">
+            Gulf Coast businesses <em>we've shipped for.</em>
+          </h2>
+        </div>
+        <div class="logos-strip reveal" style="--lc-bg:#FFFFFF; --lc-border:#D4C5AC; --lc-fg:#1A1410;">
+          <div class="logo-chip" style="background:#FFFFFF; border-color:#D4C5AC; color:#1A1410;">Bayou Catch</div>
+          <div class="logo-chip" style="background:#FFFFFF; border-color:#D4C5AC; color:#1A1410;">Beauregard&nbsp;&amp;&nbsp;Co.</div>
+          <div class="logo-chip" style="background:#FFFFFF; border-color:#D4C5AC; color:#1A1410;">Magnolia&nbsp;&amp;&nbsp;Oak</div>
+          <div class="logo-chip" style="background:#FFFFFF; border-color:#D4C5AC; color:#1A1410;">Delta Build</div>
+          <div class="logo-chip" style="background:#FFFFFF; border-color:#D4C5AC; color:#1A1410;">Bayside Clinic</div>
+          <div class="logo-chip" style="background:#FFFFFF; border-color:#D4C5AC; color:#1A1410;">Thibodeaux CPA</div>
+          <div class="logo-chip" style="background:#FFFFFF; border-color:#D4C5AC; color:#1A1410;">Gulf Harbor Marina</div>
+          <div class="logo-chip" style="background:#FFFFFF; border-color:#D4C5AC; color:#1A1410;">Front Porch Roasters</div>
+          <div class="logo-chip" style="background:#FFFFFF; border-color:#D4C5AC; color:#1A1410;">Riverside Pediatrics</div>
+          <div class="logo-chip" style="background:#FFFFFF; border-color:#D4C5AC; color:#1A1410;">Salt Air Yoga</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band cta-band--sunset">
+      <div class="container-x">
+        <span class="pilcrow" style="justify-content:center; color:var(--color-sunset);">
+          <span class="pilcrow__num" style="color:var(--color-sand);">¶ 03</span>
+          <span class="pilcrow__rule"></span>
+          <span>Your turn</span>
+        </span>
+        <h2 class="cta-band__title">Want to be on this page?</h2>
+        <p class="cta-band__sub" style="color:#D4C5AC;">We typically take on three to four new projects a month. Reach out and let's talk through what you need.</p>
+        <a href="contact.html" class="btn btn-primary" data-magnetic style="background:var(--color-sand); color:#1A1410;">
+          Start a Project
+          <svg class="ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- PROJECT DETAILS MODAL -->
+  <div class="modal-overlay" data-modal-overlay aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" data-modal-close aria-label="Close project details">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"/></svg>
+      </button>
+      <img class="modal__img" data-modal-img alt="" />
+      <h3 class="modal__title" id="modal-title" data-modal-title></h3>
+      <div class="modal__tags" data-modal-tags></div>
+      <p class="modal__body" data-modal-body></p>
+    </div>
+  </div>
+
+  <!-- === FOOTER === -->
+  <footer class="site-footer">
+    <div class="container-x">
+      <div class="site-footer__grid">
+        <div class="site-footer__col site-footer__brand">
+          <img src="assets/logo/logo.svg" alt="PixelForge" style="height:32px; width:auto;" />
+          <p>A small studio of independent coders in Ocean Springs, MS. We build websites that compete with anything coming out of the bigger cities — for a fraction of the price.</p>
+        </div>
+        <div class="site-footer__col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="pricing.html">Process</a></li>
+            <li><a href="contact.html">Get a quote</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:pixelforge.studioweb@gmail.com">pixelforge.studioweb@gmail.com</a></li>
+            <li><a href="tel:+12282813135">(228) 281-3135</a></li>
+            <li><a href="contact.html">Ocean Springs, MS</a></li>
+            <li><a href="contact.html">Book a call</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>© <span data-year>2026</span> PixelForge Studio. All rights reserved.</span>
+        <div class="social" aria-label="Social links">
+          <a href="#" aria-label="Twitter / X"><svg class="ico-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg class="ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Dribbble"><svg class="ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72M2.5 11.04c8.92.18 13.34-2.5 16-7.42m-9.43 18.15c2.06-4.95 3.74-7.5 8.93-9.42"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg class="ico-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.69 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97 0 1.95.13 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.63 1.58.24 2.75.12 3.04.73.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.2.68.79.56C20.22 21.38 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Calendly badge widget begin -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script type="text/javascript">
+    (function () {
+      function initCalendlyBadge() {
+        Calendly.initBadgeWidget({ url: 'https://calendly.com/pixelforge-studioweb', text: 'Schedule a call with me', color: '#0069ff', textColor: '#45dcff', branding: true });
+      }
+      function waitForCalendly() {
+        if (typeof Calendly !== 'undefined') { initCalendlyBadge(); return; }
+        var tries = 0;
+        var poll = setInterval(function () {
+          if (typeof Calendly !== 'undefined') { clearInterval(poll); initCalendlyBadge(); }
+          else if (++tries > 100) { clearInterval(poll); }
+        }, 100);
+      }
+      if (document.readyState === 'complete') waitForCalendly();
+      else window.addEventListener('load', waitForCalendly);
+    })();
+  </script>
+  <!-- Calendly badge widget end -->
+</body>
+</html>

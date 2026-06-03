@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>About — PixelForge</title>
+  <meta name="description" content="PixelForge is a small team of independent coders building custom websites from Ocean Springs, Mississippi. Meet the team and learn what makes us different." />
+  <meta name="theme-color" content="#0A0E1A" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Reading progress -->
+  <div class="reading-bar" aria-hidden="true"><div class="reading-bar__fill"></div></div>
+
+  <!-- === HEADER === -->
+  <header class="site-header">
+    <div class="container-x site-header__inner">
+      <a href="index.html" aria-label="PixelForge home" style="display:flex; align-items:center;">
+        <img src="assets/logo/logo.svg" alt="PixelForge" style="height:34px; width:auto;" />
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <a href="contact.html" class="btn btn-primary btn-sm hidden md:inline-flex" data-magnetic>Start a Project</a>
+        <button class="nav-burger" data-nav-burger aria-label="Open navigation" aria-expanded="false" aria-controls="nav-drawer">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-overlay" aria-hidden="true"></div>
+  <aside class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+    <div class="nav-drawer__head">
+      <img src="assets/logo/logo.svg" alt="PixelForge" style="height:28px;" />
+      <button class="nav-burger" data-nav-close aria-label="Close navigation">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"/></svg>
+      </button>
+    </div>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="pricing.html" class="nav-link">Pricing</a>
+    <a href="portfolio.html" class="nav-link">Portfolio</a>
+    <a href="about.html" class="nav-link active">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="contact.html" class="btn btn-primary" data-magnetic style="margin-top:1rem;">Start a Project</a>
+  </aside>
+  <!-- === /HEADER === -->
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero grain">
+      <div class="container-x">
+        <span class="pilcrow">
+          <span class="pilcrow__num">¶ 01</span>
+          <span class="pilcrow__rule"></span>
+          <span>Who we are</span>
+        </span>
+        <h1 class="editorial-title" style="margin-bottom:1.25rem;">
+          A small studio. <em>Big-city</em> standards.
+        </h1>
+        <p class="page-hero__lede">
+          PixelForge is a tight team of independent coders working out of Ocean Springs, Mississippi.
+          We build websites that compete with anything coming out of Atlanta, Austin, or New Orleans —
+          for the kind of price that makes sense for a Gulf Coast small business.
+        </p>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section">
+      <div class="container-x">
+        <div class="reveal" style="max-width:46rem; margin-bottom:3rem;">
+          <span class="pilcrow">
+            <span class="pilcrow__num">¶ 02</span>
+            <span class="pilcrow__rule"></span>
+            <span>The team</span>
+          </span>
+          <h2 class="editorial-title">
+            Two <em>co-founders</em>. That's it.
+          </h2>
+          <p class="section-lede" style="margin-top:1rem;">No middle managers, no account executives, no junior team handing off to senior team. When you hire PixelForge, you hire us — and we build your site ourselves.</p>
+        </div>
+
+        <div class="grid-2" style="max-width:880px;">
+          <article class="member reveal" data-spotlight data-delay="0ms">
+            <div class="member__photo">
+              <img src="assets/images/portrait-drake.svg" alt="Drake Recio portrait" />
+            </div>
+            <h3 class="member__name">Drake Recio</h3>
+            <p class="member__role">Co-Founder · Design &amp; Front-End</p>
+            <p class="member__bio">Handles the half of the work you can see — design direction, layouts, typography, and the front-end code that brings it to life. Lives for a good editorial spread and a tight type stack.</p>
+          </article>
+
+          <article class="member reveal" data-spotlight data-delay="120ms">
+            <div class="member__photo">
+              <img src="assets/images/portrait-clayton.svg" alt="Clayton Johnson portrait" />
+            </div>
+            <h3 class="member__name">Clayton Johnson</h3>
+            <p class="member__role">Co-Founder · Engineering &amp; SEO</p>
+            <p class="member__bio">Handles the half of the work that makes it actually work — integrations, performance, search visibility, and the back-end glue. Reads Core Web Vitals patch notes for fun. Mostly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COASTAL IDENTITY -->
+    <section class="section section--surface">
+      <div class="container-x">
+        <div class="coastal-panel reveal">
+          <div class="grid-2" style="align-items:center; gap:2.5rem;">
+            <div>
+              <span class="pilcrow">
+                <span class="pilcrow__num">¶ 03</span>
+                <span class="pilcrow__rule"></span>
+                <span>Why Ocean Springs</span>
+              </span>
+              <h2 class="editorial-title" style="font-size:clamp(2rem, 4vw, 2.75rem);">Rooted in the Gulf Coast. <em>On purpose.</em></h2>
+              <p style="color:var(--color-muted); line-height:1.7; font-size:1.0625rem; margin-bottom:1rem;">
+                Ocean Springs is a town of artists, builders, and small business owners. It's where we live,
+                where our families are, and where most of our clients are too. That proximity matters — we can
+                meet for coffee, walk through a storefront before designing for it, and stay on call when something
+                breaks the day before tax season.
+              </p>
+              <p style="color:var(--color-muted); line-height:1.7; font-size:1.0625rem;">
+                We don't outsource. We don't subcontract overseas. The work is done here, by us, on Government Street.
+              </p>
+            </div>
+            <div>
+              <img src="assets/images/coastal.svg" alt="Stylized Ocean Springs pier at sunset" style="width:100%; border-radius:var(--radius); border:1px solid var(--color-border);" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section">
+      <div class="container-x">
+        <div class="reveal" style="max-width:46rem; margin-bottom:3.5rem;">
+          <span class="pilcrow">
+            <span class="pilcrow__num">¶ 04</span>
+            <span class="pilcrow__rule"></span>
+            <span>What we believe</span>
+          </span>
+          <h2 class="editorial-title">
+            Three things we <em>won't</em> compromise on.
+          </h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="mag-card reveal" data-spotlight data-delay="0ms">
+            <span class="mag-card__num">01</span>
+            <div class="card__icon" style="background:rgba(0,194,203,0.1); color:var(--color-teal);">
+              <svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"/><path d="M21 3L3 21" opacity="0.4"/><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+            </div>
+            <p class="mag-card__kicker">No templates</p>
+            <h3 class="mag-card__title">We don't ship someone else's design with your logo on it.</h3>
+            <p class="mag-card__body">Every site is designed and coded for one specific business. We won't ship you the same Squarespace template your competitor down the street is also running.</p>
+          </article>
+
+          <article class="mag-card reveal" data-spotlight data-delay="120ms">
+            <span class="mag-card__num">02</span>
+            <div class="card__icon" style="background:rgba(251,146,60,0.12); color:var(--color-sunset);">
+              <svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <p class="mag-card__kicker" style="color:var(--color-sunset);">Local + reachable</p>
+            <h3 class="mag-card__title">You'll talk to the person who wrote your CSS.</h3>
+            <p class="mag-card__body">No call-center script. No help-desk tickets. When you text Drake, Drake texts back — usually within an hour during business hours.</p>
+          </article>
+
+          <article class="mag-card reveal" data-spotlight data-delay="240ms">
+            <span class="mag-card__num">03</span>
+            <div class="card__icon" style="background:rgba(56,189,248,0.12); color:var(--color-ocean-blue);">
+              <svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 17l4-6 4 3 5-8"/></svg>
+            </div>
+            <p class="mag-card__kicker" style="color:var(--color-ocean-blue);">ROI is the brief</p>
+            <h3 class="mag-card__title">A pretty site that doesn't drive customers is a failure.</h3>
+            <p class="mag-card__body">We measure success in your booked appointments, online orders, and inbound leads — not design-award entries.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS — sand pull-quotes -->
+    <section class="section--sand grain" style="padding:clamp(4rem, 7vw, 6rem) 0;">
+      <div class="container-x">
+        <div class="reveal" style="max-width:46rem; margin-bottom:3rem;">
+          <span class="pilcrow">
+            <span class="pilcrow__num">¶ 05</span>
+            <span class="pilcrow__rule"></span>
+            <span>In their words</span>
+          </span>
+          <h2 class="editorial-title">
+            What it's <em>like</em> to work with us.
+          </h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="pullquote reveal" data-spotlight data-delay="0ms">
+            <p class="pullquote__body">Drake designed something that actually looks like our space, not a generic restaurant template. We've gotten compliments from out-of-town guests who Googled us before driving in.</p>
+            <div class="pullquote__author">
+              <span class="pullquote__avatar">RT</span>
+              <div>
+                <div class="pullquote__name">Renée Thibodeaux</div>
+                <div class="pullquote__role">Bayou Catch Seafood, Biloxi</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="pullquote reveal" data-spotlight data-delay="120ms">
+            <p class="pullquote__body">Clayton quoted a number, hit the number, and shipped on the day he said he would. The site has tripled our consultation requests in six months.</p>
+            <div class="pullquote__author">
+              <span class="pullquote__avatar">EB</span>
+              <div>
+                <div class="pullquote__name">Ellis Beauregard</div>
+                <div class="pullquote__role">Partner, Beauregard &amp; Co.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="pullquote reveal" data-spotlight data-delay="240ms">
+            <p class="pullquote__body">My Google ranking for 'Ocean Springs CPA' moved from page three to position two in about ten weeks. That's real money in my door.</p>
+            <div class="pullquote__author">
+              <span class="pullquote__avatar">CT</span>
+              <div>
+                <div class="pullquote__name">Cole Thibodeaux</div>
+                <div class="pullquote__role">Thibodeaux CPA, P.A.</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band cta-band--sunset">
+      <div class="container-x">
+        <span class="pilcrow" style="justify-content:center; color:var(--color-sunset);">
+          <span class="pilcrow__num" style="color:var(--color-sand);">¶ 06</span>
+          <span class="pilcrow__rule"></span>
+          <span>Say hello</span>
+        </span>
+        <h2 class="cta-band__title">Let's grab a coffee.</h2>
+        <p class="cta-band__sub" style="color:#D4C5AC;">Local or remote — we're happy either way. Tell us about your project and we'll figure out the best way to talk.</p>
+        <a href="contact.html" class="btn btn-primary" data-magnetic style="background:var(--color-sand); color:#1A1410;">
+          Start a Project
+          <svg class="ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- === FOOTER === -->
+  <footer class="site-footer">
+    <div class="container-x">
+      <div class="site-footer__grid">
+        <div class="site-footer__col site-footer__brand">
+          <img src="assets/logo/logo.svg" alt="PixelForge" style="height:32px; width:auto;" />
+          <p>A small studio of independent coders in Ocean Springs, MS. We build websites that compete with anything coming out of the bigger cities — for a fraction of the price.</p>
+        </div>
+        <div class="site-footer__col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="pricing.html">Process</a></li>
+            <li><a href="contact.html">Get a quote</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:pixelforge.studioweb@gmail.com">pixelforge.studioweb@gmail.com</a></li>
+            <li><a href="tel:+12282813135">(228) 281-3135</a></li>
+            <li><a href="contact.html">Ocean Springs, MS</a></li>
+            <li><a href="contact.html">Book a call</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>© <span data-year>2026</span> PixelForge Studio. All rights reserved.</span>
+        <div class="social" aria-label="Social links">
+          <a href="#" aria-label="Twitter / X"><svg class="ico-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg class="ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Dribbble"><svg class="ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72M2.5 11.04c8.92.18 13.34-2.5 16-7.42m-9.43 18.15c2.06-4.95 3.74-7.5 8.93-9.42"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg class="ico-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.69 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97 0 1.95.13 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.63 1.58.24 2.75.12 3.04.73.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.2.68.79.56C20.22 21.38 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Calendly badge widget begin -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script type="text/javascript">
+    (function () {
+      function initCalendlyBadge() {
+        Calendly.initBadgeWidget({ url: 'https://calendly.com/pixelforge-studioweb', text: 'Schedule a call with me', color: '#0069ff', textColor: '#45dcff', branding: true });
+      }
+      function waitForCalendly() {
+        if (typeof Calendly !== 'undefined') { initCalendlyBadge(); return; }
+        var tries = 0;
+        var poll = setInterval(function () {
+          if (typeof Calendly !== 'undefined') { clearInterval(poll); initCalendlyBadge(); }
+          else if (++tries > 100) { clearInterval(poll); }
+        }, 100);
+      }
+      if (document.readyState === 'complete') waitForCalendly();
+      else window.addEventListener('load', waitForCalendly);
+    })();
+  </script>
+  <!-- Calendly badge widget end -->
+</body>
+</html>

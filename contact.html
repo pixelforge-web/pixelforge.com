@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Contact — PixelForge</title>
+  <meta name="description" content="Get in touch with PixelForge. Send us a message about your project or book a free 30-minute discovery call. Based in Ocean Springs, Mississippi." />
+  <meta name="theme-color" content="#0A0E1A" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Reading progress -->
+  <div class="reading-bar" aria-hidden="true"><div class="reading-bar__fill"></div></div>
+
+  <!-- === HEADER === -->
+  <header class="site-header">
+    <div class="container-x site-header__inner">
+      <a href="index.html" aria-label="PixelForge home" style="display:flex; align-items:center;">
+        <img src="assets/logo/logo.svg" alt="PixelForge" style="height:34px; width:auto;" />
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <a href="contact.html" class="btn btn-primary btn-sm hidden md:inline-flex" data-magnetic>Start a Project</a>
+        <button class="nav-burger" data-nav-burger aria-label="Open navigation" aria-expanded="false" aria-controls="nav-drawer">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-overlay" aria-hidden="true"></div>
+  <aside class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+    <div class="nav-drawer__head">
+      <img src="assets/logo/logo.svg" alt="PixelForge" style="height:28px;" />
+      <button class="nav-burger" data-nav-close aria-label="Close navigation">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"/></svg>
+      </button>
+    </div>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="pricing.html" class="nav-link">Pricing</a>
+    <a href="portfolio.html" class="nav-link">Portfolio</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+    <a href="contact.html" class="btn btn-primary" data-magnetic style="margin-top:1rem;">Start a Project</a>
+  </aside>
+  <!-- === /HEADER === -->
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero grain">
+      <div class="container-x">
+        <span class="pilcrow">
+          <span class="pilcrow__num">¶ 01</span>
+          <span class="pilcrow__rule"></span>
+          <span>Get in touch</span>
+        </span>
+        <h1 class="editorial-title" style="margin-bottom:1.25rem;">
+          Let's <em>build</em> something.
+        </h1>
+        <p class="page-hero__lede">Tell us about your project. We read every message and respond within one business day — usually faster.</p>
+      </div>
+    </section>
+
+    <!-- FORM + CONTACT INFO -->
+    <section class="section" style="padding-top:1rem;">
+      <div class="container-x">
+        <div class="grid-2" style="gap:3rem; align-items:start;">
+
+          <!-- FORM (replace setTimeout mock with `netlify` attribute on the form tag to go live) -->
+          <div class="card reveal" data-spotlight style="padding:2.5rem;">
+            <h2 class="card__title" style="font-size:1.5rem; margin-bottom:1.5rem;">Send us a message</h2>
+
+            <form name="contact" netlify novalidate>
+              <div class="field">
+                <label class="field-label" for="f-name">Your name</label>
+                <input class="field-input" type="text" id="f-name" name="name" autocomplete="name" placeholder="Jane Trahan" />
+                <span class="field-error" data-error="name"></span>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="f-email">Email address</label>
+                <input class="field-input" type="email" id="f-email" name="email" autocomplete="email" placeholder="you@example.com" />
+                <span class="field-error" data-error="email"></span>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="f-company">Company <span style="color:var(--color-muted); font-weight:400;">(optional)</span></label>
+                <input class="field-input" type="text" id="f-company" name="company" autocomplete="organization" placeholder="Your business name" />
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="f-budget">Budget range</label>
+                <select class="field-select" id="f-budget" name="budget">
+                  <option value="">Pick a range</option>
+                  <option>Under $1,000</option>
+                  <option>$1,000 – $3,000</option>
+                  <option>$3,000 – $5,000</option>
+                  <option>$5,000+</option>
+                </select>
+                <span class="field-error" data-error="budget"></span>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="f-type">Project type</label>
+                <select class="field-select" id="f-type" name="project_type">
+                  <option value="">What are we building?</option>
+                  <option>New website</option>
+                  <option>Redesign</option>
+                  <option>E-commerce</option>
+                  <option>Other</option>
+                </select>
+                <span class="field-error" data-error="project_type"></span>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="f-message">Tell us about the project</label>
+                <textarea class="field-textarea" id="f-message" name="message" placeholder="What does your business do? Who are your customers? What problem should the new site solve?"></textarea>
+                <span class="field-error" data-error="message"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary" data-magnetic style="width:100%;">
+                Send Message
+                <svg class="ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+
+              <div class="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <!-- DIRECT CONTACT INFO + CALENDLY -->
+          <div>
+            <div class="reveal" style="margin-bottom:2.5rem;">
+              <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.75rem; margin-bottom:0.5rem;">
+                <span class="pilcrow" style="margin-bottom:0;">
+                  <span class="pilcrow__num">¶ 02</span>
+                  <span class="pilcrow__rule"></span>
+                  <span>Direct line</span>
+                </span>
+                <span class="live-status" data-live-status aria-live="polite">
+                  <span class="live-status__dot"></span>
+                  <span class="live-status__label">checking…</span>
+                </span>
+              </div>
+              <h2 class="editorial-title" style="font-size:clamp(1.75rem, 3vw, 2.25rem); margin-bottom:1.5rem;">Prefer to <em>skip</em> the form?</h2>
+
+              <ul style="display:flex; flex-direction:column; gap:1.25rem; list-style:none; padding:0;">
+                <li style="display:flex; gap:0.875rem; align-items:flex-start;">
+                  <span class="feature__icon" style="background:rgba(0,194,203,0.1);">
+                    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9 6 9-6"/><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7"/><path d="M3 7l9-4 9 4"/></svg>
+                  </span>
+                  <div style="min-width:0;">
+                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-muted); margin-bottom:0.25rem;">Email</div>
+                    <div class="copy-row">
+                      <a href="mailto:pixelforge.studioweb@gmail.com" style="color:var(--color-text); font-size:1.0625rem; font-weight:600; word-break:break-all;">pixelforge.studioweb@gmail.com</a>
+                      <button class="copy-btn" data-copy="pixelforge.studioweb@gmail.com" aria-label="Copy email address">
+                        <svg class="copy-btn__copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        <svg class="copy-btn__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+
+                <li style="display:flex; gap:0.875rem; align-items:flex-start;">
+                  <span class="feature__icon" style="background:rgba(251,146,60,0.12); color:var(--color-sunset);">
+                    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                  </span>
+                  <div style="min-width:0;">
+                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-muted); margin-bottom:0.25rem;">Call us</div>
+                    <div class="copy-row">
+                      <a href="tel:+12282813135" style="color:var(--color-text); font-size:1.0625rem; font-weight:600; letter-spacing:0.01em;">(228) 281-3135</a>
+                      <button class="copy-btn" data-copy="+1 (228) 281-3135" aria-label="Copy phone number">
+                        <svg class="copy-btn__copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        <svg class="copy-btn__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>
+                      </button>
+                    </div>
+                    <div style="color:var(--color-muted); font-size:0.875rem; margin-top:0.375rem;">Auto-routed to whichever of us is free. Leave a message after-hours and we'll call back same day.</div>
+                  </div>
+                </li>
+
+                <li style="display:flex; gap:0.875rem; align-items:flex-start;">
+                  <span class="feature__icon" style="background:rgba(0,194,203,0.1);">
+                    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-7-7-13a7 7 0 1114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                  </span>
+                  <div>
+                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-muted); margin-bottom:0.25rem;">Studio</div>
+                    <div style="color:var(--color-text); font-size:1.0625rem; font-weight:600;">Ocean Springs, Mississippi</div>
+                    <div style="color:var(--color-muted); font-size:0.875rem;">Mon–Fri · 9am – 6pm CT</div>
+                    <div class="local-clock" data-local-clock>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                      <span>It's <strong data-clock-time>—</strong> in Ocean Springs</span>
+                    </div>
+                  </div>
+                </li>
+
+                <li style="display:flex; gap:0.875rem; align-items:flex-start;">
+                  <span class="feature__icon" style="background:rgba(0,194,203,0.1);">
+                    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  </span>
+                  <div>
+                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-muted); margin-bottom:0.25rem;">Response time</div>
+                    <div style="color:var(--color-text); font-size:1.0625rem; font-weight:600;">Within one business day</div>
+                    <div style="color:var(--color-muted); font-size:0.875rem;">Often the same hour during work hours</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- CALENDLY -->
+            <div class="reveal">
+              <span class="pilcrow">
+                <span class="pilcrow__num">¶ 03</span>
+                <span class="pilcrow__rule"></span>
+                <span>Or book directly</span>
+              </span>
+              <h2 class="editorial-title" style="font-size:clamp(1.75rem, 3vw, 2.25rem); margin-bottom:1.5rem;">Free <em>30-minute</em> call.</h2>
+              <div class="calendly-wrap">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/pixelforge-studioweb" style="min-width:320px; width:100%; height:700px;"></div>
+                <!-- Calendly inline widget end -->
+                <p style="text-align:center; margin-top:0.75rem; font-size:0.875rem; color:var(--color-muted);">
+                  Prefer not to schedule? <a href="mailto:pixelforge.studioweb@gmail.com" style="color:var(--color-teal-light); text-decoration:underline;">Email us instead</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band cta-band--sunset">
+      <div class="container-x">
+        <span class="pilcrow" style="justify-content:center; color:var(--color-sunset);">
+          <span class="pilcrow__num" style="color:var(--color-sand);">¶ 04</span>
+          <span class="pilcrow__rule"></span>
+          <span>The fast way</span>
+        </span>
+        <h2 class="cta-band__title">Faster than email?</h2>
+        <p class="cta-band__sub" style="color:#D4C5AC;">Three to four new projects a month. If yours is a fit, we'll have a quote in your inbox before the end of the week.</p>
+        <a href="mailto:pixelforge.studioweb@gmail.com" class="btn btn-primary" data-magnetic style="background:var(--color-sand); color:#1A1410;">
+          pixelforge.studioweb@gmail.com
+          <svg class="ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- === FOOTER === -->
+  <footer class="site-footer">
+    <div class="container-x">
+      <div class="site-footer__grid">
+        <div class="site-footer__col site-footer__brand">
+          <img src="assets/logo/logo.svg" alt="PixelForge" style="height:32px; width:auto;" />
+          <p>A small studio of independent coders in Ocean Springs, MS. We build websites that compete with anything coming out of the bigger cities — for a fraction of the price.</p>
+        </div>
+        <div class="site-footer__col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="pricing.html">Process</a></li>
+            <li><a href="contact.html">Get a quote</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:pixelforge.studioweb@gmail.com">pixelforge.studioweb@gmail.com</a></li>
+            <li><a href="tel:+12282813135">(228) 281-3135</a></li>
+            <li><a href="contact.html">Ocean Springs, MS</a></li>
+            <li><a href="contact.html">Book a call</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>© <span data-year>2026</span> PixelForge Studio. All rights reserved.</span>
+        <div class="social" aria-label="Social links">
+          <a href="#" aria-label="Twitter / X"><svg class="ico-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg class="ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Dribbble"><svg class="ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72M2.5 11.04c8.92.18 13.34-2.5 16-7.42m-9.43 18.15c2.06-4.95 3.74-7.5 8.93-9.42"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg class="ico-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.69 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97 0 1.95.13 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.63 1.58.24 2.75.12 3.04.73.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.2.68.79.56C20.22 21.38 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Calendly assets (badge widget omitted — page already has the inline embed) -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+</html>

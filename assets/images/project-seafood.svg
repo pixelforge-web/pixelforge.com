@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F2F2E"/>
+      <stop offset="100%" stop-color="#1A4D4A"/>
+    </linearGradient>
+    <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FB923C" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FB923C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="550" fill="url(#sg)"/>
+  <!-- Top nav bar -->
+  <rect x="0" y="0" width="800" height="56" fill="#0A1F1E" opacity="0.7"/>
+  <text x="32" y="36" font-family="serif" font-weight="700" font-size="22" fill="#E8DCC8">Bayou Catch</text>
+  <circle cx="640" cy="28" r="4" fill="#5EEAD4"/>
+  <circle cx="664" cy="28" r="4" fill="#5EEAD4"/>
+  <circle cx="688" cy="28" r="4" fill="#5EEAD4"/>
+  <circle cx="712" cy="28" r="4" fill="#5EEAD4"/>
+  <circle cx="736" cy="28" r="4" fill="#5EEAD4"/>
+  <!-- Hero glow -->
+  <rect x="0" y="56" width="800" height="320" fill="url(#hg)"/>
+  <!-- Hero headline -->
+  <text x="400" y="200" text-anchor="middle" font-family="serif" font-weight="700" font-size="60" fill="#F1F5F9">Gulf-fresh seafood</text>
+  <text x="400" y="260" text-anchor="middle" font-family="serif" font-weight="700" font-size="60" fill="#FB923C">since 1987.</text>
+  <!-- Button -->
+  <rect x="320" y="300" width="160" height="48" rx="24" fill="#FB923C"/>
+  <text x="400" y="330" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="15" fill="#0A1F1E">Reserve a Table</text>
+  <!-- Cards row -->
+  <rect x="40"  y="420" width="220" height="100" rx="8" fill="#0F2F2E" stroke="#1A4D4A"/>
+  <rect x="290" y="420" width="220" height="100" rx="8" fill="#0F2F2E" stroke="#1A4D4A"/>
+  <rect x="540" y="420" width="220" height="100" rx="8" fill="#0F2F2E" stroke="#1A4D4A"/>
+  <rect x="60"  y="440" width="80" height="8" rx="4" fill="#E8DCC8"/>
+  <rect x="60"  y="458" width="160" height="6" rx="3" fill="#94A3B8" opacity="0.5"/>
+  <rect x="60"  y="472" width="120" height="6" rx="3" fill="#94A3B8" opacity="0.5"/>
+  <rect x="310" y="440" width="80" height="8" rx="4" fill="#E8DCC8"/>
+  <rect x="310" y="458" width="160" height="6" rx="3" fill="#94A3B8" opacity="0.5"/>
+  <rect x="310" y="472" width="120" height="6" rx="3" fill="#94A3B8" opacity="0.5"/>
+  <rect x="560" y="440" width="80" height="8" rx="4" fill="#E8DCC8"/>
+  <rect x="560" y="458" width="160" height="6" rx="3" fill="#94A3B8" opacity="0.5"/>
+  <rect x="560" y="472" width="120" height="6" rx="3" fill="#94A3B8" opacity="0.5"/>
+</svg>

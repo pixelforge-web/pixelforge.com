@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FB923C" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#0A0E1A"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00C2CB" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0A0E1A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="380" fill="url(#sky)"/>
+  <rect y="380" width="1200" height="220" fill="url(#water)"/>
+  <!-- Sun -->
+  <circle cx="900" cy="280" r="60" fill="#FB923C" opacity="0.7"/>
+  <circle cx="900" cy="280" r="100" fill="#FB923C" opacity="0.15"/>
+  <!-- Sun reflection on water -->
+  <ellipse cx="900" cy="400" rx="80" ry="6" fill="#FB923C" opacity="0.4"/>
+  <ellipse cx="900" cy="430" rx="60" ry="4" fill="#FB923C" opacity="0.3"/>
+  <ellipse cx="900" cy="460" rx="45" ry="3" fill="#FB923C" opacity="0.2"/>
+  <!-- Pier silhouette -->
+  <rect x="100" y="370" width="280" height="6" fill="#0A0E1A"/>
+  <rect x="120" y="376" width="6" height="40" fill="#0A0E1A"/>
+  <rect x="180" y="376" width="6" height="40" fill="#0A0E1A"/>
+  <rect x="240" y="376" width="6" height="40" fill="#0A0E1A"/>
+  <rect x="300" y="376" width="6" height="40" fill="#0A0E1A"/>
+  <rect x="360" y="376" width="6" height="40" fill="#0A0E1A"/>
+  <!-- Distant trees -->
+  <path d="M 0 380 L 30 340 L 60 380 Z" fill="#0A0E1A"/>
+  <path d="M 50 380 L 80 350 L 110 380 Z" fill="#0A0E1A"/>
+  <path d="M 1100 380 L 1130 350 L 1160 380 Z" fill="#0A0E1A"/>
+  <path d="M 1150 380 L 1180 340 L 1200 380 L 1200 380 Z" fill="#0A0E1A"/>
+  <!-- Waves -->
+  <path d="M 0 460 Q 100 455 200 460 T 400 460 T 600 460 T 800 460 T 1000 460 T 1200 460" stroke="#00C2CB" stroke-width="1" fill="none" opacity="0.4"/>
+  <path d="M 0 490 Q 100 485 200 490 T 400 490 T 600 490 T 800 490 T 1000 490 T 1200 490" stroke="#00C2CB" stroke-width="1" fill="none" opacity="0.3"/>
+  <path d="M 0 520 Q 100 515 200 520 T 400 520 T 600 520 T 800 520 T 1000 520 T 1200 520" stroke="#00C2CB" stroke-width="1" fill="none" opacity="0.2"/>
+</svg>

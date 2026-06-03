@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" role="img" aria-label="PixelForge">
+  <defs>
+    <style>
+      .pf-bg { fill: #00C2CB; }
+      .pf-p  { fill: #00C2CB; font-family: 'Syne', system-ui, sans-serif; font-weight: 800; }
+      .pf-f  { fill: #F1F5F9; font-family: 'Syne', system-ui, sans-serif; font-weight: 800; }
+      .pf-word { fill: #F1F5F9; font-family: 'Syne', system-ui, sans-serif; font-weight: 700; }
+    </style>
+  </defs>
+  <!-- Geometric mark -->
+  <rect x="0" y="6" width="28" height="28" rx="6" class="pf-bg"/>
+  <text x="14" y="27" text-anchor="middle" font-size="18" class="pf-f">PF</text>
+  <!-- Wordmark -->
+  <text x="36" y="27" font-size="18" class="pf-word">Pixel<tspan class="pf-p">Forge</tspan></text>
+</svg>

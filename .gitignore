@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Tailwind standalone CLI binary (re-download from tailwindcss.com)
+tailwindcss
+
+# Editor / OS noise
+*.swp
+.idea/
+.vscode/
