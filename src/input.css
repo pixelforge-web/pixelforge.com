@@ -454,18 +454,47 @@
     border: 1px solid var(--color-border);
     cursor: pointer;
     display: block;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transform-style: preserve-3d;
+    transition:
+      opacity 0.25s ease,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.3s ease,
+      box-shadow 0.35s ease;
+    will-change: transform;
   }
-  .work-tile:hover { border-color: rgba(0, 194, 203, 0.4); }
+  .work-tile:hover {
+    border-color: var(--color-teal);
+    box-shadow:
+      0 18px 60px var(--teal-glow),
+      0 6px 18px rgba(0, 0, 0, 0.35);
+  }
+  /* Diagonal sheen — sits above the image but below the overlay */
+  .work-tile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 194, 203, 0.10) 0%, transparent 45%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 1;
+  }
+  .work-tile:hover::before { opacity: 1; }
+  /* Filter transition state */
+  .work-tile.is-hiding {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+    pointer-events: none;
+  }
   .work-tile__img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .work-tile:hover .work-tile__img { transform: scale(1.04); }
+  .work-tile:hover .work-tile__img { transform: scale(1.06) translateY(-4px); }
   .work-tile__overlay {
     position: absolute;
     inset: 0;
@@ -477,6 +506,7 @@
     gap: 0.5rem;
     opacity: 0.6;
     transition: opacity 0.3s ease;
+    z-index: 2;
   }
   .work-tile:hover .work-tile__overlay { opacity: 1; }
   .work-tile__tag {
@@ -834,6 +864,122 @@
     color: var(--color-border);
   }
 
+  /* --- Pricing complexity grid (6 factors) --- */
+  .complexity-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 640px) { .complexity-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
+  @media (min-width: 1024px) { .complexity-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .complexity-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .complexity-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-teal);
+    box-shadow: 0 16px 48px var(--teal-glow);
+  }
+
+  .complexity-card__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--teal-glow);
+    color: var(--color-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  .complexity-card__icon svg { width: 22px; height: 22px; }
+
+  .complexity-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .complexity-card p {
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+
+  .complexity-scale {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+  .scale-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+  .scale-track {
+    flex: 1;
+    height: 6px;
+    background: var(--color-surface-hi);
+    border-radius: var(--radius-pill);
+    overflow: hidden;
+  }
+  .scale-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--color-teal) 0%, var(--color-teal-light) 100%);
+    border-radius: var(--radius-pill);
+    transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .complexity-range {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* --- Pricing closer (under the complexity grid) --- */
+  .pricing-closer {
+    margin-top: 3rem;
+    padding: 2.25rem 2rem;
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-teal);
+    border-radius: var(--radius);
+    background:
+      linear-gradient(180deg, rgba(0, 194, 203, 0.05) 0%, transparent 80%),
+      var(--color-surface);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem 2rem;
+  }
+  .pricing-closer p {
+    margin: 0;
+    color: var(--color-text);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    max-width: 38rem;
+  }
+  @media (max-width: 640px) {
+    .pricing-closer { flex-direction: column; align-items: flex-start; }
+  }
+
   /* --- Forms --- */
   .field { display: block; margin-bottom: 1.25rem; }
   .field-label {
@@ -901,6 +1047,11 @@
     border: 1px solid rgba(0, 194, 203, 0.3);
     color: var(--color-teal-light);
   }
+  .form-status--error {
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    color: var(--color-danger);
+  }
 
   /* --- Filter chips (portfolio) --- */
   .chip-row {
@@ -929,6 +1080,25 @@
     background: var(--color-teal);
     color: var(--color-bg);
     border-color: var(--color-teal);
+  }
+  /* Pulse on newly-activated chip — applied briefly by JS */
+  .chip {
+    position: relative;
+    overflow: visible;
+  }
+  .chip::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid var(--color-teal);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .chip--pulse::after { animation: chip-pulse 0.6s ease-out forwards; }
+  @keyframes chip-pulse {
+    0%   { opacity: 0.55; transform: scale(1); }
+    100% { opacity: 0;    transform: scale(1.18); }
   }
 
   /* --- Team member --- */

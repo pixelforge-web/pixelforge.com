@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initFAQ();
   initContactForm();
   initPortfolioFilter();
+  initWorkTileTilt(reducedMotion);
   initPortfolioModal();
   initHeroGSAP(reducedMotion);
   initReadingProgress(reducedMotion);
@@ -265,14 +266,26 @@ function initMobileNav() {
 }
 
 /* ------------------------------------------------------------
-   Scroll reveal — IntersectionObserver + .reveal/.visible
+   Scroll reveal — IntersectionObserver + .reveal/.visible.
+   Also drives .scale-fill[data-fill] bars inside revealed cards.
    ------------------------------------------------------------ */
 function initScrollReveal(reducedMotion) {
   const els = document.querySelectorAll(".reveal");
   if (!els.length) return;
 
+  const fillScales = (root) => {
+    root.querySelectorAll(".scale-fill[data-fill]").forEach((fill) => {
+      const raw = Number(fill.dataset.fill);
+      const pct = Math.max(0, Math.min(100, isNaN(raw) ? 0 : raw));
+      fill.style.width = pct + "%";
+    });
+  };
+
   if (reducedMotion) {
-    els.forEach((el) => el.classList.add("visible"));
+    els.forEach((el) => {
+      el.classList.add("visible");
+      fillScales(el);
+    });
     return;
   }
 
@@ -287,6 +300,8 @@ function initScrollReveal(reducedMotion) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
+          // Stagger the scale-fill fill-in slightly after the card fades in
+          setTimeout(() => fillScales(entry.target), 150);
           obs.unobserve(entry.target);
         }
       });
@@ -433,9 +448,6 @@ function initContactForm() {
       valid = false;
     }
 
-    const budget = (data.get("budget") || "").toString().trim();
-    if (!budget) { showError("budget", "Pick a budget range so we can scope the project."); valid = false; }
-
     const projectType = (data.get("project_type") || "").toString().trim();
     if (!projectType) { showError("project_type", "Choose a project type."); valid = false; }
 
@@ -444,42 +456,131 @@ function initContactForm() {
 
     if (!valid) return;
 
-    // Mock submit — replace with Netlify Forms by adding `netlify` to the <form> tag
+    // Real submit — posts to Netlify Forms (form has the `netlify` attribute + a
+    // hidden form-name input, so Netlify attributes this AJAX POST correctly).
     const submitBtn = form.querySelector("[type='submit']");
     const original = submitBtn ? submitBtn.textContent : "";
     if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending..."; }
 
-    setTimeout(() => {
-      if (status) {
-        status.textContent = "Thanks! We've got your message and will get back to you within one business day.";
-        status.classList.add("show", "form-status--success");
-      }
-      form.reset();
-      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = original; }
-    }, 700);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString(),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Submission failed");
+        if (status) {
+          status.textContent = "Thanks! We've got your message and will get back to you within one business day.";
+          status.className = "form-status show form-status--success";
+        }
+        form.reset();
+      })
+      .catch(() => {
+        if (status) {
+          status.textContent = "Something went wrong sending your message. Please email us directly at pixelforge.studioweb@gmail.com.";
+          status.className = "form-status show form-status--error";
+        }
+      })
+      .finally(() => {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = original; }
+      });
   });
 }
 
 /* ------------------------------------------------------------
-   Portfolio filter — CSS class toggles only
+   Portfolio filter — animated fade-out → reflow → fade-in.
+   Also gives the clicked chip a quick ring-pulse for feedback.
    ------------------------------------------------------------ */
 function initPortfolioFilter() {
   const chips = document.querySelectorAll("[data-filter]");
   const tiles = document.querySelectorAll("[data-tags]");
   if (!chips.length || !tiles.length) return;
 
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const FADE_MS = reducedMotion ? 0 : 200;
+
   chips.forEach((chip) => {
     chip.addEventListener("click", () => {
       chips.forEach((c) => c.classList.remove("active"));
       chip.classList.add("active");
 
+      // Chip pulse (skip on reduced motion)
+      if (!reducedMotion) {
+        chip.classList.remove("chip--pulse");
+        // Force reflow so the animation restarts when re-clicking the same chip
+        void chip.offsetWidth;
+        chip.classList.add("chip--pulse");
+        setTimeout(() => chip.classList.remove("chip--pulse"), 650);
+      }
+
       const filter = chip.getAttribute("data-filter");
+
+      // Decide what stays and what goes
+      const toShow = [];
+      const toHide = [];
       tiles.forEach((tile) => {
         const tags = (tile.getAttribute("data-tags") || "").split(/\s+/);
-        const show = filter === "all" || tags.includes(filter);
-        tile.style.display = show ? "" : "none";
+        const matches = filter === "all" || tags.includes(filter);
+        (matches ? toShow : toHide).push(tile);
       });
+
+      // Phase 1: fade out the ones leaving
+      toHide.forEach((tile) => tile.classList.add("is-hiding"));
+
+      setTimeout(() => {
+        // Phase 2: collapse out the hidden ones, prep the entering ones offscreen
+        toHide.forEach((tile) => { tile.style.display = "none"; });
+        toShow.forEach((tile) => {
+          if (tile.style.display === "none") tile.style.display = "";
+          tile.classList.add("is-hiding");
+        });
+        // Force reflow before clearing the hiding state so the fade-in animates
+        void document.body.offsetWidth;
+        // Phase 3: fade the entering ones back in
+        requestAnimationFrame(() => {
+          toShow.forEach((tile) => tile.classList.remove("is-hiding"));
+        });
+      }, FADE_MS);
     });
+  });
+}
+
+/* ------------------------------------------------------------
+   Work-tile pointer tilt — subtle perspective tilt on hover.
+   Skipped on reduced-motion or non-fine-pointer devices.
+   ------------------------------------------------------------ */
+function initWorkTileTilt(reducedMotion) {
+  if (reducedMotion) return;
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+  const tiles = document.querySelectorAll(".work-tile");
+  if (!tiles.length) return;
+
+  const MAX_DEG = 3;
+
+  tiles.forEach((tile) => {
+    let rafId = null;
+
+    const onMove = (e) => {
+      const rect = tile.getBoundingClientRect();
+      const nx = (e.clientX - rect.left) / rect.width;   // 0..1
+      const ny = (e.clientY - rect.top) / rect.height;   // 0..1
+      const rotY = (nx - 0.5) * 2 * MAX_DEG;             // ±MAX_DEG
+      const rotX = (0.5 - ny) * 2 * MAX_DEG;
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        tile.style.transform =
+          `perspective(900px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-4px)`;
+      });
+    };
+
+    const onLeave = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      tile.style.transform = "";
+    };
+
+    tile.addEventListener("mousemove", onMove);
+    tile.addEventListener("mouseleave", onLeave);
   });
 }
 

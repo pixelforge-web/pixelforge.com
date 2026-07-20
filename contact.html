@@ -79,11 +79,14 @@
       <div class="container-x">
         <div class="grid-2" style="gap:3rem; align-items:start;">
 
-          <!-- FORM (replace setTimeout mock with `netlify` attribute on the form tag to go live) -->
+          <!-- FORM — submits to Netlify Forms. After deploying, add an email notification
+               in the Netlify dashboard: Site settings → Forms → Form notifications →
+               Add notification → Email notification → pixelforge.studioweb@gmail.com -->
           <div class="card reveal" data-spotlight style="padding:2.5rem;">
             <h2 class="card__title" style="font-size:1.5rem; margin-bottom:1.5rem;">Send us a message</h2>
 
-            <form name="contact" netlify novalidate>
+            <form name="contact" netlify novalidate data-contact-form>
+              <input type="hidden" name="form-name" value="contact" />
               <div class="field">
                 <label class="field-label" for="f-name">Your name</label>
                 <input class="field-input" type="text" id="f-name" name="name" autocomplete="name" placeholder="Jane Trahan" />
@@ -102,15 +105,8 @@
               </div>
 
               <div class="field">
-                <label class="field-label" for="f-budget">Budget range</label>
-                <select class="field-select" id="f-budget" name="budget">
-                  <option value="">Pick a range</option>
-                  <option>Under $1,000</option>
-                  <option>$1,000 – $3,000</option>
-                  <option>$3,000 – $5,000</option>
-                  <option>$5,000+</option>
-                </select>
-                <span class="field-error" data-error="budget"></span>
+                <label class="field-label" for="f-location">Where's your business located? <span style="color:var(--color-muted); font-weight:400;">(optional)</span></label>
+                <input class="field-input" type="text" id="f-location" name="location" autocomplete="address-level2" placeholder="Ocean Springs, MS" />
               </div>
 
               <div class="field">
